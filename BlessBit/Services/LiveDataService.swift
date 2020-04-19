@@ -23,7 +23,6 @@ class LiveDataService {
     func getLive_itemsFromAPI(completed: @escaping DownloadComplete) {
         
         AF.request(URL_LIVE).responseJSON { response in
-          
             switch response.result {
             case .success(let json):
                 if let dict = response.value as? Dictionary<String, AnyObject> {
